@@ -1,0 +1,32 @@
+{
+  "extracted_information": "Comprehensive content extracted for static site conversion, including text, headings, navigation, page structure, metadata, image sources, contact information, and overall layout. No forms or complex interactive elements were identified in the provided static content.",
+  "specifications": {},
+  "pricing": {},
+  "features": [],
+  "statistics": {},
+  "temporal_info": {},
+  "geographical_data":
+         {"company_location": "Cyprus",
+           "contact_address": "25 Martiou str 21A-2nd floor office 101, Egkomi 2408, Nicosia, Cyprus"
+         },
+ "references": [],
+ "page_content_details":
+                {"metadata":
+                {"page_title": "Welcome to ITEna Solutions | ITEna Solutions"},
+                  "header": {"logo": {"src": "https://www.itenasolutions.com/sites/all/themes/nexus/logo.png", "alt": "ITEna Solutions logo", "link": "/"},
+                    "navigation": [{"text": "Home", "url": "/"}, {"text": "About Us", "url": "/node/10"},
+                      {"text": "Solutions", "url": "/node/11"},
+                      {"text": "Contact Us", "url": "/node/8"}]},
+                  "hero_section": {"type": "slider",
+                    "slides": [{"image": {"src": "/sites/all/themes/nexus/images/slide-image-1.jpg", "alt": ""},
+                      "title": "Insurance Central", "description": "Insurance Central is a total solution for Insurance Companies, specifically designed for the needs of the Cyprus market!", "read_more_link": "/node/11"},
+                      {"image": {"src": "/sites/all/themes/nexus/images/slide-image-2.jpg", "alt": ""},
+                        "title": "Money Transfer Central", "description": "An extensive software solution implementing the requirements of a master-agent/sub-agent model of money transfer operators!", "read_more_link": "/node/11"},
+                      {"image": {"src": "/sites/all/themes/nexus/images/slide-image-3.jpg", "alt": ""},
+                        "title": "Custom development", "description": "ITEna Application host is a framework application that ITEna continually improves and uses to develop custom Windows based applications for different companies!", "read_more_link": "/node/11"}], "controls": [{"text": "Previous", "action": "#"}, {"text": "Next", "action": "#"}]}, "main_content": [{"section_title": "Welcome to ITEna Solutions", "heading_level": "H1", "text_content": "No front page content has been created yet."}, {"section_title": "About Us", "heading_level": "H2", "text_content": "We are a software company incorporated in August 1999 in Cyprus. We combine our expertise in technology with a strong Business Sense, taking a pragmatic approach to problem solving and methodically and relentlessly pursue to incrementally transform our customers operations through our solutions.", "secondary_heading": {"text": "We Make Technology Work For YOU!", "level": "H1"}}, {"section_title": "What we do", "heading_level": "H2", "services_list": [{"name": "Insurance Central", "icon": {"src": "https://www.itenasolutions.com/sites/default/files/styles/flexslider_icon_style/public/ins_icon.png?itok=UswDvyLY", "alt": ""}, "link": "node/11/#Insurance"}, {"name": "Money Transfer Central", "icon": {"src": "https://www.itenasolutions.com/sites/default/files/styles/flexslider_icon_style/public/money_icon.png?itok=KcXgwDcr", "alt": ""}, "link": "node/11/#Money"}, {"name": "Broker Central", "icon": {"src": "https://www.itenasolutions.com/sites/default/files/styles/flexslider_icon_style/public/stock_icon.png?itok=xzQX7rSh", "alt": ""}, "link": "node/11/#Broker"}, {"name": "Online Payments", "icon": {"src": "https://www.itenasolutions.com/sites/default/files/styles/flexslider_icon_style/public/online_payments_icon.png?itok=HdkYrlh6", "alt": ""}, "link": "node/11/#Online"}, {"name": "Custom development", "icon": {"src": "https://www.itenasolutions.com/sites/default/files/styles/flexslider_icon_style/public/custom_dev_icon.png?itok=iBSfqANF", "alt": ""}, "link": "node/11/#Custom"}], "view_more_link": "node/11"}, {"section_type": "statistics",
+                    "stats": [
+                      {"value": "30+", "label": "Enterprise Clients", "heading_level": "H3"},
+                       {"value": "700+", "label": "Internal Users", "heading_level": "H4"},
+                       {"value": "3000+", "label": "Web Users", "heading_level": "H5"}]
+                     },
+                     {"section_title": "Successful Software, Successful Client Relationships", "heading_level": "H2", "text_content": "For almost 20 years we have delivered solutions that are at the core of our customers' businesses. We take special care to tailor our solutions to each one of our customers. We back them with unparalleled support and enhance, improve and adapt our solutions to their changing needs. Our successful solutions lead to successful client relationships over many many years."}], "footer": {"quick_links": {"heading": "Quick Links", "links": [{"text": "Home", "url": "/"}, {"text": "About Us", "url": "/node/10"}, {"text": "Solutions", "url": "/node/11"}, {"text": "Contact Us", "url": "/node/8"}]}, "contact_info": {"heading": "Get in Touch with Us!", "address": "25 Martiou str 21A-2nd floor office 101, Egkomi 2408, Nicosia, Cyprus", "email": "info@itenasolutions.com", "phone": "700 777 20"}, "copyright": {"text": "Copyright © 2025 ITEna Solutions", "link": "/"}}}}
