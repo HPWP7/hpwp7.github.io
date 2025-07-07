@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ITEna Solutions</title>
+    <meta name="description" content="ITEna Solutions - Software company providing Insurance Central, Money Transfer Central, and custom software solutions since 1999.">
+    <meta name="keywords" content="software development, insurance solutions, insurance software,insurance platform, custom software, Cyprus">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- CSS STYLES START -->
+    <style>
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #d21f23;
+            --accent-color: #e74c3c;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --background-light: #ecf0f1;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-hover: 0 5px 20px rgba(0,0,0,0.15);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 2px solid #d21f23;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .flex-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 0 20px;
+        }
+
+        .flex-child {
+            margin: 40px;
+        }
+
+        .subtitle {
+            display: block;
+            color: #b81007;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .right {
+            margin: 0px 20px 20px 75px;
+        }
+        
+        img {
+            color: #b81007;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+
+               footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-info p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        @media (max-width: 900px) {
+            .contact-row {
+                flex-direction: column;
+            }
+
+            .google-maps iframe {
+                height: 250px;
+            }
+        }
+
+                @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .slide-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .slide-content p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .slider-arrows {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide-content {
+                padding: 1rem;
+            }
+
+            .slide-content h2 {
+                font-size: 2rem;
+            }
+
+            .about-text .highlight {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="" class="logo"><img src="images/Logo.jpg" alt="Logo"></a>
+                <nav>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+                    <ul id="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#services">Solutions</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="flex-container">
+        <div class="flex-child contact-text">
+            <h2>Get in Touch with Us!</h2>
+            <div class="contact-row">
+                <img src="images/Pinpoint.jpg" alt="Pinpoint">
+                <div class="right">
+                    <span class="subtitle">Pay us a visit:</span> 25 Martiou str 21A-2nd floor office 101,<br> Egkomi 2408, Nicosia, Cyprus
+                </div>
+            </div>
+            <div class="contact-row">
+                <img src="images/Message.jpg" alt="Message">
+                <div class="right">
+                    <span class="subtitle">Send us a message:</span> <a href="mailto:info@itenasolutions.com">info@itenasolutions.com</a>
+                </div>
+            </div>
+            <div class="contact-row">
+                <img src="images/Phone.jpg" alt="Phone">
+                <div class="right">
+                    <span class="subtitle">Give us a call:</span> 700 777 20
+                </div>
+            </div>
+        </div>
+        <div class="flex-child google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13046.78233900033!2d33.331475!3d35.164212!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x143999a8bb32e55a!2sITEna+Solutions+Ltd!5e0!3m2!1sen!2s!4v1509105552540" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#services">Solutions</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get in Touch with Us!</h3>
+                    <div class="contact-info">
+                        <p>25 Martiou str 21A-2nd floor office 101<br>Egkomi 2408, Nicosia, Cyprus</p>
+                        <p>Email: <a href="mailto:info@itenasolutions.com">info@itenasolutions.com</a></p>
+                        <p>Phone: 700 777 20</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 ITEna Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
