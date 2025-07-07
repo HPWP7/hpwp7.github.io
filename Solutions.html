@@ -7,8 +7,6 @@
     <meta name="description" content="ITEna Solutions - Software company providing Insurance Central, Money Transfer Central, and custom software solutions since 1999.">
     <meta name="keywords" content="software development, insurance solutions, insurance software,insurance platform, custom software, Cyprus">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
-
-    <!-- CSS STYLES START -->
     <style>
         /* RESET & BASE STYLES */
         * {
@@ -33,7 +31,6 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
             color: var(--text-primary);
             background-color: var(--white);
         }
@@ -65,9 +62,7 @@
         }
 
         p {
-            margin-bottom: 1rem;
             color: var(--text-secondary);
-            font-size: 1.1rem;
         }
 
         header {
@@ -142,29 +137,57 @@
             display: flex;
             max-width: 1200px;
             margin: 0 auto;
+            padding-top: 50px;
         }
 
         .flex-child {
-            margin: 40px;
+            margin: auto;
+            width: 100%;
         }
 
-        .subtitle {
-            display: block;
+        .pictures {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom: 75px;
+        }
+
+        .icons {
+            text-align: center;
+        }
+
+        .icons a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #b81007;
+            transition: var(--transition);
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 50px;
+        }
+
+        .content-section img {
+            padding-top: 20px;
+        }
+
+        .text-section {
+            width: 50%;
+            text-align: justify;
+        }
+
+        .text-section h3 {
             color: #b81007;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 20px;
         }
 
-        .right {
-            margin: 0px 20px 20px 75px;
-        }
-        
-        img {
-            color: #b81007;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            float: left;
+        .text-section p {
+            margin: 0 0 20px;
         }
 
         footer {
@@ -285,6 +308,13 @@
                 grid-template-columns: 1fr;
             }
 
+            .flex-container {
+                display: flex;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-top: 1000px;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -330,30 +360,49 @@
                 });
         });
     </script>
-    <div class="flex-container">
-        <div class="flex-child contact-text">
-            <h2>Get in Touch with Us!</h2>
-            <div class="contact-row">
-                <img src="images/Pinpoint.jpg" alt="Pinpoint">
-                <div class="right">
-                    <span class="subtitle">Pay us a visit:</span> 25 Martiou str 21A-2nd floor office 101,<br> Egkomi 2408, Nicosia, Cyprus
+    <div class="container">
+        <div class="flex-container">
+            <div class="flex-child pictures">
+                <div class="icons">
+                    <a href="#InsuranceCentral">
+                        <img src="images/ins_icon.png" alt="Insurance Central">
+                        <h4>Insurance Central</h4>
+                    </a>
                 </div>
-            </div>
-            <div class="contact-row">
-                <img src="images/Message.jpg" alt="Message">
-                <div class="right">
-                    <span class="subtitle">Send us a message:</span> <a href="mailto:info@itenasolutions.com">info@itenasolutions.com</a>
+                <div class="icons">
+                    <a href="#OnlinePayments">
+                        <img src="images/online_payments_icon.png" alt="Online Payments">
+                        <h4>Online Payments</h4>
+                    </a>
                 </div>
-            </div>
-            <div class="contact-row">
-                <img src="images/Phone.jpg" alt="Phone">
-                <div class="right">
-                    <span class="subtitle">Give us a call:</span> 700 777 20
+                <div class="icons">
+                    <a href="#CustomDevelopment">
+                        <img src="images/custom_dev_icon.png" alt="Custom Development">
+                        <h4>Custom Development</h4>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="flex-child google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13046.78233900033!2d33.331475!3d35.164212!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x143999a8bb32e55a!2sITEna+Solutions+Ltd!5e0!3m2!1sen!2s!4v1509105552540" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="InsuranceCentral" class="content-section">
+            <div class="text-section">
+                <h3>Insurance Central</h3>
+                <p>InsuranceCentral is a total solution for General Insurance Companies, specifically designed for the needs of the Cyprus market. It provides extended functionality packaged into a number of closely integrated modules allowing it to scale up to accommodate big companies as well as down to accommodate smaller companies. Modules include General Insurance, Claims Management, Insurance Accounting, CustomerWeb, AgentWeb and Document management. With an extensive client base of many Insurance companies we continuously maintain, enhance and tailor our solution to meet our client's needs. Recent changes include compliance changes for support of regulations for premium collection by the Superintendent of Insurance as well as enhancements to payment options with direct debit and credit card payments for installments to automate the collection of premiums.</p>
+            </div>
+            <img src="images/insurance_central.jpg" alt="Insurance Central" width="480" height="320">
+        </div>
+        <div id="OnlinePayments" class="content-section">
+            <img src="images/online_payments.jpg" alt="Online Payments" width="480" heright="320">
+            <div class="text-section">
+                <h3>Online Payments</h3>
+                <p>We have extensive expertise in payment solutions both as a consumer of APIs from jcc, paypal and others as well as having our own server APIs with full implementations of ISO8583 payments protocol for our private label Card system to custom api workflows for connections to banking and money transfer networks through our work on MoneyTransfer solutions, as well as SEPA Direct Debit integrations supported by our insurance and accounting systems.</p>
+            </div>
+        </div>
+        <div id="CustomDevelopment" class="content-section">
+            <div class="text-section">
+                <h3>Custom Development</h3>
+                <p>We develop custom line of business software for customers based on their specific needs. These can be cloud based or on premises, integrate with third parties through webservices or other communication technlogies and utilise browser based or windows front ends. Customers can take advantage of our own custom developed application framework, reusable code and extensive expertise and experience from solutions we developed for other companies which can jump start the development, They can benefit from infrastructure development like advanced user management, full general ledger accounting, reporting, exporting to excel, flexible searching, customization etc.</p>    
+            </div>
+            <img src="images/custom_development.jpg" alt="Custom Development" width="480" height="320">
         </div>
     </div>
     <div id="footer-placeholder"></div>
