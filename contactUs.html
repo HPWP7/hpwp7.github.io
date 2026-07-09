@@ -9,44 +9,60 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  body{margin:0;font-family:'IBM Plex Sans',sans-serif;color:#1E2530}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'IBM Plex Sans',sans-serif;color:#1E2530;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
   a.itn-link{color:#D21F23}
   a.itn-link:hover{color:#A8181C}
   a.nav-link:hover{color:#1E2530}
+  .mobile-menu-btn:hover{background:#F6F5F2}
+  @media (max-width:900px){
+    .mobile-menu-btn{display:flex !important}
+    .nav-links{display:none !important;width:100%;flex-direction:column;align-items:stretch;gap:0;margin-top:14px;padding-top:14px;border-top:1px solid #E3E1DC}
+    .nav-links .nav-items{flex-direction:column;align-items:stretch;gap:0;width:100%}
+    .nav-links .nav-items a{padding:14px 4px;border-bottom:1px solid #E3E1DC}
+    .nav-links > a.nav-cta{margin-top:14px;text-align:center;width:100%}
+    .nav-toggle-input:checked ~ .nav-links{display:flex !important}
+    .contact-grid,.footer-grid{grid-template-columns:1fr !important}
+    .footer-grid{gap:36px !important}
+  }
 </style>
 </head>
 <body>
 <div style="background:#fff">
 
   <!-- HEADER -->
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 64px;border-bottom:3px solid #D21F23">
-    <a href="index.html" style="display:flex;align-items:center">
+  <div class="site-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:20px clamp(20px,6vw,64px);border-bottom:3px solid #D21F23;position:relative">
+    <a href="index.html" style="display:flex;align-items:center;order:1">
       <img src="assets/Logo-transparent.png" alt="ITEna Solutions" style="height:46px;width:auto;display:block">
     </a>
-    <div style="display:flex;align-items:center;gap:44px">
-      <div style="display:flex;gap:36px;font-size:15px;font-weight:500">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" style="display:none">
+    <div class="nav-links" style="order:3;display:flex;align-items:center;gap:44px">
+      <div class="nav-items" style="display:flex;gap:36px;font-size:15px;font-weight:500">
         <a class="nav-link" href="index.html" style="color:#4A5261">Home</a>
         <a class="nav-link" href="Solutions.html" style="color:#4A5261">Solutions</a>
         <a class="nav-link" href="contactUs.html" style="color:#1E2530;border-bottom:2px solid #D21F23;padding-bottom:4px">Contact Us</a>
       </div>
-      <a href="mailto:info@itenasolutions.com" style="background:#D21F23;color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:3px">Email Us</a>
+      <a class="nav-cta" href="mailto:info@itenasolutions.com" style="background:#D21F23;color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:3px">Email Us</a>
     </div>
+    <label for="nav-toggle" class="mobile-menu-btn" style="order:2;display:none;cursor:pointer;width:40px;height:40px;align-items:center;justify-content:center;border-radius:6px;margin:-8px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E2530" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg>
+    </label>
   </div>
 
   <!-- PAGE HERO -->
-  <div style="position:relative;background:#1E2530;padding:76px 64px;overflow:hidden">
+  <div style="position:relative;background:#1E2530;padding:76px clamp(20px,6vw,64px);overflow:hidden">
     <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle, rgba(210,31,35,0.28), transparent 70%)"></div>
     <div style="position:relative;max-width:720px">
       <span style="font-size:13px;font-weight:700;letter-spacing:2.5px;color:#EE8A8D;text-transform:uppercase">Get In Touch</span>
-      <h1 style="font-family:'Archivo',sans-serif;font-size:44px;line-height:1.1;font-weight:800;color:#fff;margin:14px 0 18px;letter-spacing:-1px">Let's talk about your project</h1>
+      <h1 style="font-family:'Archivo',sans-serif;font-size:clamp(28px,5.5vw,44px);line-height:1.1;font-weight:800;color:#fff;margin:14px 0 18px;letter-spacing:-1px">Let's talk about your project</h1>
       <p style="font-size:17px;line-height:1.65;color:#B8BEC7;margin:0;max-width:560px">Reach out by phone, email, or in person — we're based in the heart of Nicosia.</p>
     </div>
   </div>
 
   <!-- CONTACT DETAILS + MAP -->
-  <div style="padding:100px 64px">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:70px;align-items:start">
+  <div style="padding:100px clamp(20px,6vw,64px)">
+    <div class="contact-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start">
 
       <div style="display:flex;flex-direction:column;gap:36px">
 
@@ -90,8 +106,8 @@
   </div>
 
   <!-- FOOTER -->
-  <div style="background:#171D26;padding:64px 64px 28px">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:60px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.1)">
+  <div style="background:#171D26;padding:64px clamp(20px,6vw,64px) 28px">
+    <div class="footer-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:60px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.1)">
       <div>
         <div style="background:#fff;display:inline-block;padding:8px 12px;border-radius:6px;margin-bottom:14px"><img src="assets/Logo-transparent.png" alt="ITEna Solutions" style="height:28px;width:auto;display:block"></div>
         <p style="font-size:14.5px;line-height:1.7;color:#8B93A0;max-width:280px;margin:0">Software solutions for insurance, payments and custom enterprise platforms since 1999.</p>

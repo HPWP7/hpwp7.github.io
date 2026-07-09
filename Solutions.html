@@ -9,44 +9,60 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  body{margin:0;font-family:'IBM Plex Sans',sans-serif;color:#1E2530}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'IBM Plex Sans',sans-serif;color:#1E2530;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
   a.itn-link{color:#D21F23}
   a.itn-link:hover{color:#A8181C}
   a.nav-link:hover{color:#1E2530}
+  .mobile-menu-btn:hover{background:#F6F5F2}
+  @media (max-width:900px){
+    .mobile-menu-btn{display:flex !important}
+    .nav-links{display:none !important;width:100%;flex-direction:column;align-items:stretch;gap:0;margin-top:14px;padding-top:14px;border-top:1px solid #E3E1DC}
+    .nav-links .nav-items{flex-direction:column;align-items:stretch;gap:0;width:100%}
+    .nav-links .nav-items a{padding:14px 4px;border-bottom:1px solid #E3E1DC}
+    .nav-links > a.nav-cta{margin-top:14px;text-align:center;width:100%}
+    .nav-toggle-input:checked ~ .nav-links{display:flex !important}
+    .solution-row,.footer-grid{grid-template-columns:1fr !important}
+    .footer-grid{gap:36px !important}
+  }
 </style>
 </head>
 <body>
 <div style="background:#fff">
 
   <!-- HEADER -->
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 64px;border-bottom:3px solid #D21F23">
-    <a href="index.html" style="display:flex;align-items:center">
+  <div class="site-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:20px clamp(20px,6vw,64px);border-bottom:3px solid #D21F23;position:relative">
+    <a href="index.html" style="display:flex;align-items:center;order:1">
       <img src="assets/Logo-transparent.png" alt="ITEna Solutions" style="height:46px;width:auto;display:block">
     </a>
-    <div style="display:flex;align-items:center;gap:44px">
-      <div style="display:flex;gap:36px;font-size:15px;font-weight:500">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" style="display:none">
+    <div class="nav-links" style="order:3;display:flex;align-items:center;gap:44px">
+      <div class="nav-items" style="display:flex;gap:36px;font-size:15px;font-weight:500">
         <a class="nav-link" href="index.html" style="color:#4A5261">Home</a>
         <a class="nav-link" href="Solutions.html" style="color:#1E2530;border-bottom:2px solid #D21F23;padding-bottom:4px">Solutions</a>
         <a class="nav-link" href="contactUs.html" style="color:#4A5261">Contact Us</a>
       </div>
-      <a href="contactUs.html" style="background:#D21F23;color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:3px">Contact Us</a>
+      <a class="nav-cta" href="contactUs.html" style="background:#D21F23;color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:3px">Contact Us</a>
     </div>
+    <label for="nav-toggle" class="mobile-menu-btn" style="order:2;display:none;cursor:pointer;width:40px;height:40px;align-items:center;justify-content:center;border-radius:6px;margin:-8px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E2530" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg>
+    </label>
   </div>
 
   <!-- PAGE HERO -->
-  <div style="position:relative;background:#1E2530;padding:76px 64px;overflow:hidden">
+  <div style="position:relative;background:#1E2530;padding:76px clamp(20px,6vw,64px);overflow:hidden">
     <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle, rgba(210,31,35,0.28), transparent 70%)"></div>
     <div style="position:relative;max-width:720px">
       <span style="font-size:13px;font-weight:700;letter-spacing:2.5px;color:#EE8A8D;text-transform:uppercase">What We Do</span>
-      <h1 style="font-family:'Archivo',sans-serif;font-size:44px;line-height:1.1;font-weight:800;color:#fff;margin:14px 0 18px;letter-spacing:-1px">Solutions built for your business</h1>
+      <h1 style="font-family:'Archivo',sans-serif;font-size:clamp(28px,5.5vw,44px);line-height:1.1;font-weight:800;color:#fff;margin:14px 0 18px;letter-spacing:-1px">Solutions built for your business</h1>
       <p style="font-size:17px;line-height:1.65;color:#B8BEC7;margin:0;max-width:560px">Purpose-built software for insurance and payments — with a modern SaaS platform on the way.</p>
     </div>
   </div>
 
   <!-- JUMP NAV -->
   <div style="border-bottom:1px solid #E3E1DC;background:#F6F5F2">
-    <div style="max-width:1200px;margin:0 auto;padding:22px 64px;display:flex;gap:40px;font-size:14.5px;font-weight:600">
+    <div style="max-width:1200px;margin:0 auto;padding:22px clamp(20px,6vw,64px);display:flex;flex-wrap:wrap;gap:clamp(16px,4vw,40px);font-size:14.5px;font-weight:600">
       <a class="itn-link" href="#InsuranceCentral">Insurance Central</a>
       <a class="itn-link" href="#OnlinePayments">Online Payments</a>
       <a class="itn-link" href="#InsuranceAgencySaaS">Insurance Agency SaaS</a>
@@ -54,13 +70,13 @@
   </div>
 
   <!-- INSURANCE CENTRAL -->
-  <div id="InsuranceCentral" style="padding:110px 64px;scroll-margin-top:24px">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 0.9fr;gap:80px;align-items:center">
+  <div id="InsuranceCentral" style="padding:110px clamp(20px,6vw,64px);scroll-margin-top:24px">
+    <div class="solution-row" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 0.9fr;gap:56px;align-items:center">
       <div>
         <div style="width:56px;height:56px;border-radius:8px;background:#FCEAEA;color:#D21F23;display:flex;align-items:center;justify-content:center;margin-bottom:26px">
           <svg width="26" height="26" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 L40 11 V22 C40 33 33 40 24 44 C15 40 8 33 8 22 V11 Z"/><path d="M16.5 24 L21.5 29 L31.5 18"/></svg>
         </div>
-        <h2 style="font-family:'Archivo',sans-serif;font-size:32px;font-weight:800;color:#1E2530;margin:0 0 20px;letter-spacing:-0.5px">Insurance Central</h2>
+        <h2 style="font-family:'Archivo',sans-serif;font-size:clamp(24px,4.5vw,32px);font-weight:800;color:#1E2530;margin:0 0 20px;letter-spacing:-0.5px">Insurance Central</h2>
         <p style="font-size:16px;line-height:1.8;color:#4A5261;margin:0">A complete solution for general insurance companies, purpose-built for the needs of the Cyprus market. Extended functionality is packaged into closely integrated modules — General Insurance, Claims Management, Insurance Accounting, CustomerWeb, AgentWeb and Document Management — scaling from small agencies to large enterprises. With an extensive client base, we continuously maintain, enhance and tailor the solution to each client's needs, including recent compliance updates for premium-collection regulation and expanded direct debit and credit card installment options.</p>
       </div>
       <div style="border-radius:8px;overflow:hidden;box-shadow:0 20px 50px rgba(30,37,48,0.18);position:relative;background:linear-gradient(160deg,#242E3E,#171D26);height:360px;display:flex;align-items:center;justify-content:center">
@@ -116,8 +132,8 @@
   </div>
 
   <!-- ONLINE PAYMENTS -->
-  <div id="OnlinePayments" style="padding:0 64px 110px;scroll-margin-top:24px">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1fr;gap:80px;align-items:center">
+  <div id="OnlinePayments" style="padding:0 clamp(20px,6vw,64px) 110px;scroll-margin-top:24px">
+    <div class="solution-row" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1fr;gap:56px;align-items:center">
       <div style="border-radius:8px;overflow:hidden;box-shadow:0 20px 50px rgba(30,37,48,0.18);position:relative;background:linear-gradient(160deg,#242E3E,#171D26);height:360px;display:flex;align-items:center;justify-content:center">
         <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(210,31,35,0.35) 1.5px, transparent 1.5px);background-size:22px 22px;-webkit-mask-image:linear-gradient(245deg, rgba(0,0,0,0.85), transparent 60%);mask-image:linear-gradient(245deg, rgba(0,0,0,0.85), transparent 60%)"></div>
         <div style="position:absolute;bottom:-150px;left:-110px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle, rgba(210,31,35,0.3), transparent 70%)"></div>
@@ -149,15 +165,15 @@
         <div style="width:56px;height:56px;border-radius:8px;background:#FCEAEA;color:#D21F23;display:flex;align-items:center;justify-content:center;margin-bottom:26px">
           <svg width="26" height="26" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="12" width="38" height="26" rx="4"/><line x1="5" y1="20" x2="43" y2="20"/><line x1="11" y1="30" x2="21" y2="30"/></svg>
         </div>
-        <h2 style="font-family:'Archivo',sans-serif;font-size:32px;font-weight:800;color:#1E2530;margin:0 0 20px;letter-spacing:-0.5px">Online Payments</h2>
+        <h2 style="font-family:'Archivo',sans-serif;font-size:clamp(24px,4.5vw,32px);font-weight:800;color:#1E2530;margin:0 0 20px;letter-spacing:-0.5px">Online Payments</h2>
         <p style="font-size:16px;line-height:1.8;color:#4A5261;margin:0">Deep expertise in payment solutions — both as a consumer of APIs from JCC, PayPal and others, and with our own server-side APIs implementing the ISO 8583 payments protocol for private-label card systems. Custom API workflows connect to banking and money-transfer networks, alongside SEPA Direct Debit integrations supported directly by our insurance and accounting systems.</p>
       </div>
     </div>
   </div>
 
   <!-- INSURANCE AGENCY SAAS -->
-  <div id="InsuranceAgencySaaS" style="padding:110px 64px;background:#F6F5F2;scroll-margin-top:24px">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1fr;gap:80px;align-items:center">
+  <div id="InsuranceAgencySaaS" style="padding:110px clamp(20px,6vw,64px);background:#F6F5F2;scroll-margin-top:24px">
+    <div class="solution-row" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1fr;gap:56px;align-items:center">
       <div style="border-radius:8px;overflow:hidden;box-shadow:0 20px 50px rgba(30,37,48,0.18);position:relative;background:linear-gradient(160deg,#242E3E,#171D26);height:360px;display:flex;align-items:center;justify-content:center">
         <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(210,31,35,0.35) 1.5px, transparent 1.5px);background-size:22px 22px;-webkit-mask-image:linear-gradient(245deg, rgba(0,0,0,0.85), transparent 60%);mask-image:linear-gradient(245deg, rgba(0,0,0,0.85), transparent 60%)"></div>
         <div style="position:absolute;top:-150px;right:-110px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle, rgba(210,31,35,0.3), transparent 70%)"></div>
@@ -191,27 +207,27 @@
         </div>
       </div>
       <div>
-        <div style="display:flex;align-items:center;gap:22px;margin-bottom:26px">
+        <div style="display:flex;align-items:center;gap:22px;margin-bottom:26px;flex-wrap:wrap">
           <div style="width:56px;height:56px;border-radius:8px;background:#FCEAEA;color:#D21F23;display:flex;align-items:center;justify-content:center">
             <svg width="26" height="26" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 L42 15 L24 24 L6 15 Z"/><path d="M6 24 L24 33 L42 24"/><path d="M6 33 L24 42 L42 33"/></svg>
           </div>
           <span style="background:#1E2530;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.5px;padding:5px 11px;border-radius:20px">IN DEVELOPMENT</span>
         </div>
-        <h2 style="font-family:'Archivo',sans-serif;font-size:32px;font-weight:800;color:#1E2530;margin:0 0 20px;letter-spacing:-0.5px">Insurance Agency SaaS</h2>
+        <h2 style="font-family:'Archivo',sans-serif;font-size:clamp(24px,4.5vw,32px);font-weight:800;color:#1E2530;margin:0 0 20px;letter-spacing:-0.5px">Insurance Agency SaaS</h2>
         <p style="font-size:16px;line-height:1.8;color:#4A5261;margin:0">A cloud-native, multi-tenant platform bringing Insurance Central's capabilities to agencies as a modern SaaS product — extending the same claims, policy and accounting engine to a broader base of agencies, with no on-premises infrastructure required. Currently under active development.</p>
       </div>
     </div>
   </div>
 
   <!-- CTA -->
-  <div style="background:#D21F23;padding:64px;text-align:center">
-    <h2 style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:800;color:#fff;margin:0 0 26px;letter-spacing:-0.5px">Have a project in mind?</h2>
+  <div style="background:#D21F23;padding:clamp(20px,6vw,64px);text-align:center">
+    <h2 style="font-family:'Archivo',sans-serif;font-size:clamp(22px,4.5vw,30px);font-weight:800;color:#fff;margin:0 0 26px;letter-spacing:-0.5px">Have a project in mind?</h2>
     <a href="contactUs.html" style="display:inline-block;background:#1E2530;color:#fff;font-size:15px;font-weight:600;padding:16px 34px;border-radius:3px">Contact Us</a>
   </div>
 
   <!-- FOOTER -->
-  <div style="background:#171D26;padding:64px 64px 28px">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:60px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.1)">
+  <div style="background:#171D26;padding:64px clamp(20px,6vw,64px) 28px">
+    <div class="footer-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:60px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.1)">
       <div>
         <div style="background:#fff;display:inline-block;padding:8px 12px;border-radius:6px;margin-bottom:14px"><img src="assets/Logo-transparent.png" alt="ITEna Solutions" style="height:28px;width:auto;display:block"></div>
         <p style="font-size:14.5px;line-height:1.7;color:#8B93A0;max-width:280px;margin:0">Software solutions for insurance, payments and custom enterprise platforms since 1999.</p>
