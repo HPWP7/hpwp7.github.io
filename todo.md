@@ -8,8 +8,9 @@ Working list of improvements for the ITEna Solutions site, ordered by effort so 
 - [x] Resolve the `assets/favicon.png` vs `images/favicon.png` duplication — confirmed `assets/favicon.png` is the one referenced by all 3 pages; resolved by deleting `images/`.
 - [x] Add `robots.txt` (allow all, point to sitemap).
 - [x] Add a `sitemap.xml` listing the 3 pages.
-- [ ] Add Open Graph / Twitter Card meta tags (`og:title`, `og:description`, `og:image`, `twitter:card`) to all 3 pages — needs one shareable image (e.g. logo on navy background) to point `og:image` at.
-- [ ] Add a custom `404.html` at the repo root so broken links get a branded page instead of GitHub's default.
+- [x] Add Open Graph / Twitter Card meta tags (`og:title`, `og:description`, `og:image`, `twitter:card`) to all 3 pages.
+- [x] Replace the `og:image`/`twitter:image` placeholder — built a proper 1200×630 banner (`assets/og-banner.png`, logo on the navy/red brand background with the new tagline) and wired it into all 3 pages.
+- [x] Add a custom `404.html` at the repo root so broken links get a branded page instead of GitHub's default.
 
 ## Small (under an hour, touches a few files)
 
@@ -24,3 +25,4 @@ Working list of improvements for the ITEna Solutions site, ordered by effort so 
 ## Large (structural investment)
 
 - [ ] **Design system**: extract the repeated header/nav/footer/CTA-button/stat-card markup (currently duplicated verbatim across all 3 HTML files — see `CLAUDE.md`) into a small component library authored/iterated on in Claude Design, synced locally via `/design-sync` and `DesignSync`. Worth doing once either (a) the site grows past 3 pages, or (b) visual design iteration becomes frequent enough that hand-editing 3 files per change gets painful. Start with one low-risk component (e.g. the CTA button or stat card) to validate the workflow before migrating the header/footer.
+  - Note: the header and footer blocks are literally copy-pasted into `index.html`, `Solutions.html`, and `contactUs.html` — byte-for-byte identical except for which nav link is marked active. When this is tackled, all three copies need to be reconciled into the one shared component (watch for any small drift that's crept in between them by then).
