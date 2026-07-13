@@ -42,7 +42,8 @@ The site is organized as a simple static website with these main files:
 - Solutions.html — solutions overview
 - contactUs.html — contact information page
 - CNAME — custom domain configuration
-- images/ — site assets and visuals
+- assets/ — logo and favicon
+- robots.txt / sitemap.xml — SEO configuration
 - README.md — project documentation
 
 ## Design Notes
@@ -80,5 +81,4 @@ This repository is intended to be published directly through GitHub Pages from t
 
 To update the website:
 - edit the relevant HTML file for page content
-- replace images in the images folder as needed
 - keep the navigation and contact details consistent across pages
