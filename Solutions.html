@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LVCDLNGH40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LVCDLNGH40');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solutions | ITEna Solutions</title>
 <meta name="description" content="Insurance Central, Online Payments, and our upcoming Insurance Agency SaaS platform from ITEna Solutions.">
@@ -223,7 +232,7 @@
           <span style="background:#1E2530;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.5px;padding:5px 11px;border-radius:20px">IN DEVELOPMENT</span>
         </div>
         <h2 style="font-family:'Archivo',sans-serif;font-size:clamp(24px,4.5vw,32px);font-weight:800;color:#1E2530;margin:0 0 20px;letter-spacing:-0.5px">Insurance Agency SaaS</h2>
-        <p style="font-size:16px;line-height:1.8;color:#4A5261;margin:0">A new, cloud-native SaaS platform for insurance agencies and brokers, built from the ground up on our 25+ years of experience delivering insurance software with InsuranceCentral. Multi-tenant, no on-premises infrastructure required, designed for agencies working across multiple insurers. Currently under active development</p>
+        <p style="font-size:16px;line-height:1.8;color:#4A5261;margin:0">A new, cloud-native SaaS platform for insurance agencies and brokers, built from the ground up on our <span id="years-experience">25</span>+ years of experience delivering insurance software with InsuranceCentral. Multi-tenant, no on-premises infrastructure required, designed for agencies working across multiple insurers. Currently under active development</p>
       </div>
     </div>
   </div>
@@ -258,9 +267,21 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;padding-top:24px;font-size:13px;color:#5C6472">Copyright © 2026 ITEna Solutions. All rights reserved.</div>
+    <div style="text-align:center;padding-top:24px;font-size:13px;color:#5C6472">Copyright © <span id="copyright-year">2026</span> ITEna Solutions. All rights reserved.</div>
   </div>
 
 </div>
+<script>
+(function(){
+  var now = new Date();
+  var year = now.getFullYear();
+  var sinceSept = now >= new Date(year, 8, 1);
+  var years = year - 1999 - (sinceSept ? 0 : 1);
+  var yearsEl = document.getElementById('years-experience');
+  if (yearsEl) yearsEl.textContent = years;
+  var copyrightEl = document.getElementById('copyright-year');
+  if (copyrightEl) copyrightEl.textContent = year;
+})();
+</script>
 </body>
 </html>

@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LVCDLNGH40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LVCDLNGH40');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us | ITEna Solutions</title>
 <meta name="description" content="Get in touch with ITEna Solutions in Nicosia, Cyprus.">
@@ -138,9 +147,10 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;padding-top:24px;font-size:13px;color:#5C6472">Copyright © 2026 ITEna Solutions. All rights reserved.</div>
+    <div style="text-align:center;padding-top:24px;font-size:13px;color:#5C6472">Copyright © <span id="copyright-year">2026</span> ITEna Solutions. All rights reserved.</div>
   </div>
 
 </div>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

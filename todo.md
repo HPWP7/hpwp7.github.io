@@ -14,15 +14,21 @@ Working list of improvements for the ITEna Solutions site, ordered by effort so 
 
 ## Small (under an hour, touches a few files)
 
-- [ ] Footer copyright year (`© 2026`) is hardcoded in `Solutions.html` and `contactUs.html` — either bump manually each January, or replace with a tiny inline `<script>document.write(new Date().getFullYear())</script>` so it never goes stale (small tradeoff: the one bit of JS on an otherwise JS-free site).
-- [ ] Decide on analytics (e.g. a privacy-friendly option like Plausible/Fathom, or GA4) and add the snippet to all 3 pages if wanted.
+- [x] Footer copyright year — now computed via a small inline script (`#copyright-year` span) in all 4 pages instead of hardcoded. Also made the "25+ years" stat (`#years-experience`, index.html hero stat + Solutions.html SaaS copy) dynamic: `current year - 1999`, minus 1 before Sept 1 (company incorporated August 1999).
+- [x] Analytics — restored the pre-redesign GA4 tag (`G-LVCDLNGH40`, gtag.js) that was dropped during the rewrite; added to `<head>` of all 4 pages (`index.html`, `Solutions.html`, `contactUs.html`, `404.html`).
 
 ## Medium (needs a decision, not just execution)
 
 - [ ] Contact page has no real form, only `mailto:` links + embedded map. A working form needs a third-party backend since GitHub Pages has no server (e.g. Formspree, Web3Forms). Decide if `mailto:` is good enough or if a form is worth the extra dependency.
-- [ ] "Insurance Agency SaaS" section is marked "IN DEVELOPMENT" — revisit copy/status as that project progresses (content task, not code).
+- [ ] "Insurance Agency SaaS" section: keep the "IN DEVELOPMENT" badge as-is (deliberately open-ended, no timeline implied), but the paragraph's "Currently under active development" line is inaccurate — the SaaS project hasn't actually started, this section exists to gauge market interest. **Target: January 2027** (deprioritized — Eurosure project has priority until then; some leads already exist independently of the site). When revisited, swap that line for an interest CTA, e.g. "Interested in early access? Get in touch." linking to `contactUs.html`.
 
 ## Large (structural investment)
 
-- [ ] **Design system**: extract the repeated header/nav/footer/CTA-button/stat-card markup (currently duplicated verbatim across all 3 HTML files — see `CLAUDE.md`) into a small component library authored/iterated on in Claude Design, synced locally via `/design-sync` and `DesignSync`. Worth doing once either (a) the site grows past 3 pages, or (b) visual design iteration becomes frequent enough that hand-editing 3 files per change gets painful. Start with one low-risk component (e.g. the CTA button or stat card) to validate the workflow before migrating the header/footer.
-  - Note: the header and footer blocks are literally copy-pasted into `index.html`, `Solutions.html`, and `contactUs.html` — byte-for-byte identical except for which nav link is marked active. When this is tackled, all three copies need to be reconciled into the one shared component (watch for any small drift that's crept in between them by then).
+- [ ] **Design system** (plan agreed 2026-07-14, not started — finalize details and implement later):
+  - **Problem 1 — duplicated markup**: header/nav/footer blocks are copy-pasted byte-for-byte across `index.html`, `Solutions.html`, `contactUs.html`, `404.html` (only the active nav link differs). Any change means hand-editing 4 files and hoping nothing drifts.
+  - **Problem 2 — duplicated styling**: colors/fonts/sizes are repeated as raw inline `style="..."` hex/px values on nearly every element, not just in the header — riskier than the markup duplication since a typo (e.g. `#4A5261` vs `#4A5162`) is invisible without a side-by-side diff.
+  - **Agreed approach**: a small custom Node script, run at commit time (not a runtime/client-side include — no added JS dependency, still plain static output for GitHub Pages), that:
+    1. Composes the header/nav/footer partials into each page's final HTML.
+    2. Uses a shared stylesheet via `<link rel="stylesheet" href="styles.css">` (confirmed OK to drop the "fully self-contained per file" property now that a build step exists) — start by tokenizing colors (highest drift risk), then type scale, gradually replacing inline hex/px values; page-specific one-off layout (padding, grid) can stay inline.
+  - Still to finalize before starting: exact script structure/partial format, how tokens are named, migration order across the 4 pages.
+  - Worth doing once either (a) the site grows past today's 4 pages, or (b) hand-editing 4 files per header/footer/color change becomes painful — both already true, but deprioritized while the user is focused on the Eurosure project (see also the SaaS interest CTA item above, same reason).

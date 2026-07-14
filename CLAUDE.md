@@ -16,7 +16,8 @@ There is no build, lint, or test tooling — it's plain static HTML/CSS. To prev
 
 - `index.html`, `Solutions.html`, `contactUs.html` — the three pages of the site. Each is a fully self-contained HTML file with **all CSS inline** (mostly via `style="..."` attributes, plus a small `<style>` block in `<head>` for hover states and the `@media (max-width:900px)` responsive/mobile-nav breakpoint). There are no shared `.css` or `.js` files.
 - Because styling is inline and duplicated per file, **header/nav/footer markup and shared styles (colors, fonts, spacing) must be edited in all three HTML files together** to stay consistent — there is no shared partial/include mechanism.
-- Mobile nav menu is pure CSS (checkbox hack): a hidden `<input type="checkbox" id="nav-toggle">` toggled by a `<label>`, showing `.nav-links` via the `.nav-toggle-input:checked ~ .nav-links` selector. No JavaScript on the site.
+- Mobile nav menu is pure CSS (checkbox hack): a hidden `<input type="checkbox" id="nav-toggle">` toggled by a `<label>`, showing `.nav-links` via the `.nav-toggle-input:checked ~ .nav-links` selector.
+- The only JavaScript on the site is a small inline `<script>` before `</body>` on each page: it sets the footer `#copyright-year` span to the current year, and (on `index.html`/`Solutions.html`) the `#years-experience` span to `current year - 1999`, minus 1 before September 1 (company incorporated August 1999) — keep these spans/scripts in sync if the footer or About/SaaS copy changes.
 - Fonts are loaded from Google Fonts (`Archivo` for headings, `IBM Plex Sans` for body text).
 - Brand colors: dark navy `#1E2530` (backgrounds/text), red accent `#D21F23` / hover `#A8181C` (CTAs, highlights), grays `#4A5261`/`#6B6F76`/`#8B93A0` for secondary text.
 - `assets/` holds the logo and favicon; `images/` holds page content images (hero backgrounds, icons, etc.).
